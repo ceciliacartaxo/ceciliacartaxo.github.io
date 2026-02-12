@@ -1,0 +1,314 @@
+/* ======================================================================
+   BASE / RESET
+====================================================================== */
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    cursor: default;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+::selection {
+    background: hotpink;
+    color: #000;
+}
+
+/* ======================================================================
+   VÍDEOS
+====================================================================== */
+
+.video-bloco {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+
+
+    margin: 80px 0;
+}
+
+.video-bloco video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ======================================================================
+   TIPOGRAFIA BASE (Desktop)
+====================================================================== */
+
+h1 {
+    font-size: 2.5rem;
+    font-family: 'Geist Variable', sans-serif;
+    font-weight: 400;
+    color: white;
+}
+
+h2 {
+    font-size: .8em;
+    font-family: 'Geist Variable', sans-serif;
+    font-weight: 400;
+    color: gray;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: gray;
+}
+
+p {
+    word-wrap: break-word;
+
+}
+
+/* ======================================================================
+   LAYOUT (PROJETOS)
+====================================================================== */
+
+.projeto {
+    margin: 4rem;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    gap: 40px;
+    margin-bottom: 80px;
+}
+
+main.projeto figure figure {
+    margin: 0;
+}
+
+main.projeto>figure {
+    margin: 80px 0;
+}
+
+.coluna {
+    width: 50%;
+}
+
+.imagens {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.projeto img {
+    padding-bottom: 40px;
+}
+
+.description-projects p {
+    font-size: 1em;
+    color: white;
+}
+
+.tasks {
+    color: white;
+    font-family: 'Geist Mono', serif;
+    font-size: .8em;
+    font-weight: 200;
+}
+
+.integrantes {
+    font-family: 'Geist Variable', sans-serif;
+    font-size: .8em;
+    color: hotpink;
+    font-weight: 200;
+}
+
+.caption {
+    margin: 12% 2% 12% 0;
+}
+
+.texto-coluna {
+    line-height: 1.8;
+}
+
+.sobre-projeto {
+    font-family: 'Kaisei HarunoUmi', sans-serif;
+}
+
+/* ======================================================================
+   HEADER & FOOTER
+====================================================================== */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 8px;
+    margin-top: 0.5rem;
+    z-index: 100;
+}
+
+header img {
+    width: 1.5rem;
+    display: block;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 8px;
+    z-index: 100;
+    mix-blend-mode: difference;
+    pointer-events: none;
+}
+
+footer a {
+    pointer-events: auto;
+    display: block;
+    width: 1.5rem;
+}
+
+.star-link:hover img {
+    content: url("../assets/img/star-pressed-2.svg");
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.sobre-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: opacity 0.3s ease;
+    font-family: 'Geist Variable', sans-serif;
+}
+
+.sobre-link:hover {
+    opacity: 0.6;
+}
+
+.lang {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: opacity 0.3s ease;
+    margin-left: auto;
+}
+
+
+/* ======================================================================
+   RESPONSIVIDADE (MOBILE)
+====================================================================== */
+
+@media (max-width: 768px) {
+
+    body {
+        cursor: default;
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin: 0;
+    }
+
+    h2,
+    h3 {
+        font-size: 1rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+        padding-bottom: 10px;
+    }
+
+    .container {
+        flex-direction: column;
+        gap: 0;
+        margin-bottom: 60px;
+    }
+
+    .coluna {
+        width: 100%;
+    }
+
+    .projeto {
+        margin: 0;
+    }
+
+    .video-bloco {
+        margin: 60px 0;
+        height: auto;
+    }
+}
+
+/* ======================================================================
+   OUTROS
+====================================================================== */
+
+.video-container {
+    text-align: center;
+}
+
+/* Versão Normal Variável */
+@font-face {
+    font-family: 'Geist';
+    src: url('../fonts/Geist[wght].woff2') format('woff2-variations');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+/* Versão Itálica Variável */
+@font-face {
+    font-family: 'Geist';
+    src: url('../fonts/Geist-Italic[wght].woff2') format('woff2-variations');
+    font-weight: 100 900;
+    font-style: italic;
+}
+
+/* Geist Mono - Normal */
+@font-face {
+    font-family: 'Geist Mono';
+    src: url('../fonts/GeistMono[wght].woff2') format('woff2-variations');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+/* Geist Mono - Itálico */
+@font-face {
+    font-family: 'Geist Mono';
+    src: url('../fonts/GeistMono-Italic[wght].woff2') format('woff2-variations');
+    font-weight: 100 900;
+    font-style: italic;
+}
+
+/* Ardeco */
+@font-face {
+    font-family: 'Ardeco';
+    src: url('../fonts/Ardeco-webfont.ttf');
+    font-style: normal;
+}
+
+.kaisei-harunoumi-regular {
+    font-family: "Kaisei HarunoUmi", serif;
+    font-weight: 400;
+    font-style: normal;
+}

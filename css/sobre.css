@@ -1,0 +1,265 @@
+/* ======================================================================
+   RESET / TIPOGRAFIA BASE
+====================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::selection {
+    background: hotpink;
+    color: white;
+}
+
+a,
+.slide a,
+.slide a img {
+    cursor: pointer;
+}
+
+.italic {
+    font-style: italic;
+}
+
+p {
+
+    margin-bottom: 2%;
+}
+
+a {
+    color: gray;
+}
+
+
+/* ======================================================================
+   CONTAINER
+====================================================================== */
+
+.flex-container {
+    text-align: left;
+    margin-left: 4rem;
+    margin-top: 4rem;
+    margin-bottom: 0;
+}
+
+.flex-item-1 {
+    background: white;
+    color: black;
+    margin-bottom: 3rem;
+    max-width: 90%;
+}
+
+.flex-item-1 p {
+    font-size: 1.5em;
+    font-family: 'Kaisei HarunoUmi', sans-serif;
+
+}
+
+.flex-item-1 h1 {
+    font-size: .8em;
+    font-family: 'Geist Variable', sans-serif;
+    margin-bottom: 10px;
+}
+
+.flex-container-rodape {
+    text-align: left;
+    margin-left: 4rem;
+    margin-top: 4rem;
+    margin-bottom: 0;
+    font-family: 'Geist Variable', sans-serif;
+    display: flex;
+    font-size: 1.2em;
+}
+
+.flex-item-1-rodape {
+    background: white;
+    color: black;
+    margin-bottom: 1rem;
+    padding-right: 1em;
+}
+
+.flex-item-2-rodape {
+    background: white;
+    color: black;
+    margin-bottom: 1rem;
+    padding-right: 1em;
+
+}
+
+
+
+
+/* ======================================================================
+   HEADER & FOOTER
+====================================================================== */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 8px;
+    margin-top: 0.5rem;
+    z-index: 100;
+}
+
+header img {
+    width: 1.5rem;
+    display: block;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 8px;
+    z-index: 100;
+    mix-blend-mode: difference;
+    pointer-events: none;
+}
+
+footer a {
+    pointer-events: auto;
+    display: block;
+    width: 1.5rem;
+}
+
+
+.star-link img {
+    filter: brightness(0%);
+}
+
+.star-link:hover img {
+    content: url("../assets/img/star-pressed-2.svg");
+}
+
+/* Versão Normal Variável */
+@font-face {
+    font-family: 'Geist';
+    src: url('../fonts/Geist[wght].woff2') format('woff2-variations');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+/* Versão Itálica Variável */
+@font-face {
+    font-family: 'Geist';
+    src: url('../fonts/Geist-Italic[wght].woff2') format('woff2-variations');
+    font-weight: 100 900;
+    font-style: italic;
+}
+
+/* Geist Mono - Normal */
+@font-face {
+    font-family: 'Geist Mono';
+    src: url('../fonts/GeistMono[wght].woff2') format('woff2-variations');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+/* Geist Mono - Itálico */
+@font-face {
+    font-family: 'Geist Mono';
+    src: url('../fonts/GeistMono-Italic[wght].woff2') format('woff2-variations');
+    font-weight: 100 900;
+    font-style: italic;
+}
+
+
+
+.kaisei-harunoumi-regular {
+    font-family: "Kaisei HarunoUmi", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+/* ======================================================================
+   INTERAÇÕES
+====================================================================== */
+
+#eu {
+    width: 200px;
+    position: fixed;
+    top: 500px;
+    left: 1200px;
+    cursor: grab;
+    user-select: none;
+    z-index: 999;
+    touch-action: none;
+}
+
+#eu:active {
+    cursor: grabbing;
+}
+
+/* ======================================================================
+   PROJETOS
+====================================================================== */
+
+
+.container-projetos {
+    margin-left: 4rem;
+    margin-right: 4rem;
+}
+
+.header-projetos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    margin-bottom: 2px;
+}
+
+.header-projetos h1 {
+    font-size: .8em;
+    font-family: 'Geist Variable', sans-serif;
+}
+
+.table-container-projetos {
+    background-color: white;
+    font-size: 1em;
+    font-family: 'Kaisei HarunoUmi', sans-serif;
+}
+
+.table-row-projetos {
+    display: grid;
+    grid-template-columns: 3fr 2fr 1fr;
+    gap: 20px;
+    padding: 18px 0px;
+    background-color: white;
+    align-items: center;
+    transition: background-color 0.2s ease;
+    border-collapse: collapse;
+    border-bottom: 1px solid black;
+}
+
+.table-row-projetos:hover {
+    background-color: hotpink;
+}
+
+.table-row-projetos.alt {
+    background-color: whitek;
+}
+
+.table-row-projetos.alt:hover {
+    background-color: hotpink;
+}
+
+.project-name {
+    font-size: 1.2em;
+}
+
+.project-location {
+    font-size: 1.2em;
+    color: black;
+}
+
+@media (max-width: 768px) {
+    .table-row-projetos {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+}

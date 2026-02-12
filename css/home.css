@@ -1,0 +1,321 @@
+/* ======================================================================
+   RESET / TIPOGRAFIA BASE
+====================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #000000;
+    overflow: hidden;
+    font-family: 'Geist Variable', sans-serif;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: white;
+}
+
+a,
+.slide a,
+.slide a img {
+    cursor: pointer;
+}
+
+/* ======================================================================
+   HEADER & FOOTER (ELEMENTOS FIXOS)
+====================================================================== */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 8px;
+    margin-top: 0.5rem;
+    z-index: 100;
+    mix-blend-mode: difference;
+}
+
+header img {
+    width: 1.5rem;
+    height: auto;
+    display: block;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 8px;
+    z-index: 100;
+    mix-blend-mode: difference;
+    pointer-events: none;
+}
+
+footer a {
+    pointer-events: auto;
+    display: block;
+    width: 1.5rem;
+}
+
+
+/* ======================================================================
+   LINHA DO MOUSE (DESKTOP) - POSICIONAMENTO NO TOPO
+====================================================================== */
+
+.mouse-line {
+    position: fixed;
+    pointer-events: none;
+    top: 0px;
+    left: 0;
+    z-index: 50;
+}
+
+.line {
+    height: 5px;
+    background: hotpink;
+}
+
+/* ======================================================================
+   CAROUSEL (DESKTOP)
+====================================================================== */
+
+.carousel-container {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.carousel-track {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slide {
+    width: auto;
+    min-width: 35vw;
+    max-width: 70vw;
+    padding: 0 2vw;
+    color: white;
+    flex-shrink: 0;
+}
+
+/* ======================================================================
+   MEDIA E IMAGENS
+====================================================================== */
+
+.media-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide-media {
+    width: 100%;
+    height: 100%;
+    pointer-events: auto;
+}
+
+.slide-media img {
+    max-width: 100%;
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+.slide-lg .slide-media {
+    height: 80vh;
+}
+
+.slide-md .slide-media {
+    height: 60vh;
+}
+
+.slide-sm .slide-media {
+    height: 35vh;
+}
+
+.slide-xs .slide-media {
+    height: 20vh;
+}
+
+/* ======================================================================
+   TOOLTIP
+====================================================================== */
+
+.tooltip {
+    position: fixed;
+    background: white;
+    color: hotpink;
+    font-family: 'Geist Mono', serif;
+    font-size: 1rem;
+    padding: 8px 10px;
+    border-radius: 4px;
+    display: none;
+    pointer-events: none;
+    z-index: 999;
+    white-space: pre-line;
+}
+
+/* ======================================================================
+   RESPONSIVIDADE (MOBILE)
+====================================================================== */
+
+@media (max-width: 768px) {
+
+    body {
+        overflow: auto;
+    }
+
+    .mouse-line {
+        display: none;
+    }
+
+    .tooltip {
+        display: none !important;
+    }
+
+    header img,
+    footer a {
+        width: 32px;
+    }
+
+    header {
+        margin-top: 1rem;
+    }
+
+    .carousel-container {
+        position: relative;
+        inset: auto;
+        overflow: visible;
+        cursor: default;
+    }
+
+    .carousel-track {
+        flex-direction: column;
+        transform: none !important;
+        transition: none;
+    }
+
+    .slide {
+        min-width: 100%;
+        max-width: 100%;
+        width: 100%;
+        padding: 10vh 0;
+    }
+
+    .slide-media {
+        height: auto;
+    }
+
+    .slide-lg .slide-media,
+    .slide-md .slide-media,
+    .slide-sm .slide-media,
+    .slide-xs .slide-media {
+        height: auto;
+    }
+
+    .slide-media img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+}
+
+
+/* Container do link na home */
+.video-link-home {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    overflow: hidden;
+    position: relative;
+}
+
+
+.video-link-home video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+
+.video-link-home:hover {
+    cursor: pointer;
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+.star-link:hover img {
+    content: url("../assets/img/star-pressed-2.svg");
+}
+
+
+.sobre-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: opacity 0.3s ease;
+}
+
+.sobre-link:hover {
+    opacity: 0.6;
+}
+
+/* Versão Normal Variável */
+@font-face {
+    font-family: 'Geist';
+    src: url('../fonts/Geist[wght].woff2') format('woff2-variations');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+/* Versão Itálica Variável */
+@font-face {
+    font-family: 'Geist';
+    src: url('../fonts/Geist-Italic[wght].woff2') format('woff2-variations');
+    font-weight: 100 900;
+    font-style: italic;
+}
+
+/* Geist Mono - Normal */
+@font-face {
+    font-family: 'Geist Mono';
+    src: url('../fonts/GeistMono[wght].woff2') format('woff2-variations');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+/* Geist Mono - Itálico */
+@font-face {
+    font-family: 'Geist Mono';
+    src: url('../fonts/GeistMono-Italic[wght].woff2') format('woff2-variations');
+    font-weight: 100 900;
+    font-style: italic;
+}
+
+/* Ardeco */
+@font-face {
+    font-family: 'Ardeco';
+    src: url('../fonts/Ardeco-webfont.ttf');
+    font-style: normal;
+}
