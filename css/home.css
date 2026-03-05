@@ -33,7 +33,9 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    padding: 8px;
+    width: 100%;
+    padding: 8px 20px;
+    box-sizing: border-box;
     margin-top: 0.5rem;
     z-index: 100;
     mix-blend-mode: difference;
@@ -43,6 +45,17 @@ header img {
     width: 1.5rem;
     height: auto;
     display: block;
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.link-direita {
+    margin-left: auto;
 }
 
 footer {
@@ -254,12 +267,6 @@ footer a {
 
 .video-link-home:hover {
     cursor: pointer;
-}
-
-.header-nav {
-    display: flex;
-    align-items: center;
-    gap: 15px;
 }
 
 
